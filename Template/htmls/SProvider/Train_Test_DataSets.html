@@ -1,0 +1,97 @@
+{% extends 'SProvider/design1.html' %}
+{% block researchblock %}
+
+
+<link rel="icon" href="images/icon.png" type="image/x-icon" />
+
+	<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Righteous" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Fredoka+One" rel="stylesheet">
+
+
+
+		<style>
+			body {background-color:#000000;}
+			.container-fluid {padding:50px;}
+			.container{background-color:white;padding:50px;   }
+			#title{font-family: 'Times New Roman';
+}
+			.text-uppercase{
+			font-family: 'Times New Roman';
+
+			}
+			.tweettext{
+
+    border: 2px solid yellowgreen;
+    width: 1104px;
+    height: 442px;
+    overflow: scroll;
+    background-color:;
+}
+		.style1 {
+	color: #FFF;
+	
+}
+.style7 {color: #FFFF00;
+	font-size: 18px;
+
+
+}
+
+		td, th{
+			padding: 20px;
+			font-family:'Times New Roman';
+		}
+		.style9{
+			color: #fad867;
+		}
+        </style>
+
+	<body>
+	<div class="container-fluid">
+		<div class="container" style="background:#000;opacity:0.8;border-radius: 25px;">
+
+			<div class="row">
+				<div class="col-md-5">
+
+
+
+ 					<form role="form" method="POST" >
+						{% csrf_token %}
+						<fieldset>
+                            <p align="center" class="text-uppercase pull-center style1">Vechile Accident Datasets Trained and Tested Results</p>
+
+                            <hr>
+                            <div>
+                               <table border="5" cellpadding="10" align="center">
+                      <tr><td ><div align="center"><span class="style10 style7">Model Type</span></div></td>
+                          <td ><div align="center"><span class="style10 style7">Accuracy</span></div></td>
+                      </tr>
+                            {% for object in objs %}
+                      <tr>
+                                        <td style="color:#fff; font-size:15px; " ><div align="center">{{object.names}}</div></td>
+                                        <td style="font-size:15px; "><div align="center" class="style9"><span >{{object.ratio}}</span></div></td>
+                                 </tr>
+
+                                        {% endfor %}
+                      </table>
+
+{{objs1}}
+
+                            </div>
+
+
+
+
+						</fieldset>
+					</form>
+				</div>
+
+				<div class="col-md-2">
+					<!-------null------>
+				</div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+    <tr>

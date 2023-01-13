@@ -1,0 +1,76 @@
+{% extends 'SProvider/design1.html' %}
+{% block researchblock %}
+
+<link rel="icon" href="images/icon.png" type="image/x-icon" />
+
+	<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Righteous" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Fredoka+One" rel="stylesheet">
+
+
+
+		<style>
+			body {background-color:#000000;}
+			.container-fluid {padding:50px;}
+			.container{background-color:white;padding:50px;   }
+			#title{font-family: 'Times New Roman';
+}
+			.text-uppercase{
+			font-family: 'Times New Roman', cursive;
+
+			}
+			input{
+			font-family:'Times New Roman', sans-serif;
+			font-size:15px;
+			}
+
+		.style1 {color: #fff}
+		td, th{
+			font-family:'Times New Roman';
+		}
+        </style>
+
+	<body>
+	<div class="container-fluid" align="center"> 
+		<div class="container" style="background:#000;opacity:0.8;border-radius: 25px;">
+
+			<div class="row">
+				<div class="col-md-5" >
+ 					<form role="form" method="POST" >
+						{% csrf_token %}
+						<fieldset>
+							<p class="text-uppercase pull-center style1">VIEW ALL REMOTE USERS !!! </p>
+                            <div class="viewclients" >
+							  <table border="1" cellpadding="10" >
+								<tr>
+									<th  style="color:#fff">USER NAME</th>
+									<th  style="color:#FFF">EMAIL</th>
+									<th  style="color:#FFF">Mob No</th>
+									<th  style="color:#FFF">Country</th>
+									<th  style="color:#FFF">State</th>
+									<th  style="color:#FFF">City</th>
+								</tr>
+								<tr>
+								{% for o in objects %}
+									<td style="color:white"><span class="style1">{{o.username}}</span></td>
+									<td style="color:white"><span class="style1">{{o.email}}</span></td>
+									<td style="color:white"><span class="style1">{{o.phoneno}}</span></td>
+									<td style="color:white"><span class="style1">{{o.country}}</span></td>
+									<td style="color:white"><span class="style1">{{o.state}}</span></td>
+									<td style="color:white"><span class="style1">{{o.city}}</span></td>
+								</tr>
+								{% endfor %}
+							</table>
+
+						</div>
+					  </fieldset>
+					</form>
+				</div>
+
+				<div class="col-md-2">
+					<!-------null------>
+				</div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

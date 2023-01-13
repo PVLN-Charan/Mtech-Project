@@ -1,0 +1,125 @@
+{% extends 'SProvider/design1.html' %}
+{% block researchblock %}
+
+
+<link rel="icon" href="images/icon.png" type="image/x-icon" />
+
+	<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Righteous" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=F#fffoka+One" rel="stylesheet">
+
+
+
+		<style>
+			body {background-color:#000000;
+            
+            }
+			.container-fluid {padding:50px;}
+			.container{background-color:white;padding:50px;   }
+			#title{font-family: 'Times New Roman', cursive;
+}
+			.text-uppercase{
+			font-family: 'Times New Roman', cursive;
+
+			}
+			.tweettext{
+
+    border: 2px solid yellowgreen;
+    width: 1104px;
+    height: 442px;
+    overflow: scroll;
+    
+}
+		.style1 {
+	color: #FFF;
+	
+}
+.style7 {
+    padding: 5px;
+    color: #FFFF00; 
+    font-weight: bold;}
+        .style8 { 
+            padding: 5px;
+            color:#fff; 
+            font-size:15px; 
+            font-family:'Times New Roman';
+
+        }
+		td, th{
+			font-family:'Times New Roman' ;
+		}
+        </style>
+
+	<body>
+	<div class="container-fluid">
+		<div class="container" style="background:#000;opacity:0.8;border-radius: 25px;">
+
+			<div class="row" >
+				<div class="col-md-5">
+ 					<form role="form" method="POST" >
+						{% csrf_token %}
+						<fieldset>
+							<p align="center" class="text-uppercase pull-center style1">View All Road Accident Prediction Status !!! </p>
+                            <hr>
+                            <div >
+                                 <table border="1" cellpadding="5">
+
+
+                                  
+                                    <td ><div align="center" ><span class="style7">State</span></div></td>
+                                    <td ><div align="center" class="style8"><span class="style7">Area_Name</span></div></td>
+                                    
+                                    <td ><div align="center" class="style8"><span class="style7">Vechile_Load</span></div></td>
+                                    <td ><div align="center" class="style8"><span class="style7">Time</span></div></td>
+                                    <td ><div align="center" class="style8"><span class="style7">Road_Class</span></div></td>
+                                        <td ><div align="center" class="style8"><span class="style7">Road_Surface</span></div></td>
+                                    <td ><div align="center" class="style8"><span class="style7">Lighting_Conditions</span></div></td>
+                                    <td ><div align="center" class="style8"><span class="style7">Weather_Conditions</span></div></td>
+                                    
+                                    
+                                    <td ><div align="center" class="style8"><span class="style7">Type_of_Vehicle</span></div></td>
+                                    <td ><div align="center" class="style8"><span class="style7">Prediction</span></div></td>
+
+
+
+                      </tr>
+                            {% for object in objs %}
+                      <tr>
+
+                          
+<td class="style8" ><div align="center">{{object.State}}</div></td>
+<td class="style8" ><div align="center">{{object.Area_Name }}</div></td>
+<td class="style8" ><div align="center">{{object.Vechile_Load}}</div></td>
+<td class="style8" ><div align="center">{{object.Time}}</div></td>
+<td class="style8" ><div align="center">{{object.Road_Class}}</div></td>
+<td class="style8" ><div align="center">{{object.Road_Surface}}</div></td>
+<td class="style8" ><div align="center">{{object.Lighting_Conditions}}</div></td>
+<td class="style8" ><div align="center">{{object.Weather_Conditions}}</div></td>
+
+<td class="style8"  ><div align="center">{{object.Type_of_Vehicle}}</div></td>
+<td class="style8"  ><div align="center">{{object.SVM}}</div></td>
+
+
+
+                        </tr>
+                                        {% endfor %}
+                      </table>
+
+
+                            </div>
+
+
+
+
+						</fieldset>
+					</form>
+				</div>
+
+				<div class="col-md-2">
+					<!-------null------>
+				</div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+    <tr>

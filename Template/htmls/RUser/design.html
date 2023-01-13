@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Remote User</title>
+<link href="https://fonts.googleapis.com/css?family=Russo+One" rel="stylesheet">
+<style>
+      body{background: url("{% static '1.webp' %}") 60% 90% no-repeat fixed;
+	background-size:cover;
+	font-family: 'Times New Roman';
+	background-color: #000000;
+    }
+    h1{
+    color:white;
+    }
+.topnav {
+  overflow: hidden;
+  background-color: #812;
+}
+
+.topnav a {
+  float: left;
+  color: #FFFFFF;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #8e4fd1;
+  color: white;
+}
+.style1 {color: #FF0000}
+
+/* Navbar container */
+.navbar {
+  overflow: hidden;
+  background-color: #333;
+  font-family: 'Times New Roman', Times, serif;
+  border-radius: 25px;
+  padding: 10px;
+}
+
+/* Links inside the navbar */
+.navbar a {
+  float: left;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* The dropdown container */
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+/* Dropdown button */
+.dropdown .dropbtn {
+  font-size: 16px;
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit; /* Important for vertical align on mobile phones */
+  margin: 0; /* Important for vertical align on mobile phones */
+}
+
+/* Add a red background color to navbar links on hover */
+.navbar a:hover, .dropdown:hover .dropbtn {
+  background-color: #FF3E00;
+  border-radius: 25px;
+}
+
+/* Dropdown content (hidden by default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+/* Add a grey background color to dropdown links on hover */
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+</style>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"></head>
+<body>
+
+<h1 align="center" class="style1" style="font-family:'Times New Roman';font-size:28px;color:#000;">A Road Accident Prediction Model Using Data Mining Techniques</h1>
+
+<div  class="navbar">
+
+     <a class="active" href="{% url 'Predict_Road_Accident_Status' %}">PREDICT ROAD ACCIDENT STATUS </a>
+     <a href="{% url 'ViewYourProfile' %}">VIEW YOUR PROFILE</a>
+     <a href="{% url 'login' %}">LOGOUT</a>
+</div>
+
+
+<div class="mainholder">
+{% block userblock %}
+{% endblock %}
+</div>
+</body>
+</html>

@@ -1,0 +1,85 @@
+{% extends 'RUser/design.html' %}
+{% block userblock %}
+
+<link rel="icon" href="images/icon.png" type="image/x-icon" />
+
+	<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Righteous" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Fredoka+One" rel="stylesheet">
+
+
+
+		<style>
+			body {background-color:#000000;}
+			.container-fluid {padding:50px;}
+			.container{background-color:white;padding:50px;   }
+			#title{font-family: 'Fredoka One', cursive;
+}
+			.text-uppercase{
+			font-family: 'Righteous', cursive;
+
+			}
+		.style1 {color: #fff}
+		.style2{
+			font-family:Trebuchet MS;
+			color: #FCF914;
+		}
+        </style>
+
+	<body>
+	<div class="container-fluid">
+		<div class="container" style="background:#000;opacity:0.8; border-radius:25px;">
+
+			<div class="row">
+				<div class="col-md-5">
+ 					<form role="form" method="POST" >
+						{% csrf_token %}
+						<fieldset>
+							<p class="text-uppercase pull-center style1">YOUR PROFILE DETAILS !!! </p>
+                            <hr>
+ 							<div class="form-group">
+                                <P><span class="style1">USER NAME </span><span class="style2">= {{object.username}}</span></P>
+                            </div>
+
+							<div class="form-group">
+                                <P><span class="style1">EMAIL </span><span class="style2">= {{object.email}}</span></P>
+                            </div>
+
+							<div class="form-group">
+                                <P><span class="style1">PASSWORD </span><span class="style2">= {{object.password}}</span></P>
+							</div>
+
+							<div class="form-group">
+                                <p><span class="style1">MOBILE NO </span><span class="style2">= {{object.phoneno}}</span></p>
+
+							</div>
+
+							<div class="form-group">
+                                <p><span class="style1">COUNTRY </span><span class="style2">= {{object.country}}</span></p>
+
+							</div>
+
+							<div class="form-group">
+                                <p><span class="style1">STATE </span><span class="style2">= {{object.state}}</span></p>
+
+							</div>
+
+							<div class="form-group">
+                                <p><span class="style1">CITY </span><span class="style2">= {{object.city}}</span></p>
+
+							</div>
+
+
+
+
+						</fieldset>
+					</form>
+				</div>
+
+				<div class="col-md-2">
+					<!-------null------>
+				</div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
